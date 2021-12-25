@@ -18,6 +18,10 @@ namespace Avalonia.AcrylicBlur.Sample
         public static AppBuilder BuildAvaloniaApp()
             => AppBuilder.Configure<App>()
                 .UsePlatformDetect()
+                .With(new Win32PlatformOptions
+                {
+                    UseWindowsUIComposition = true
+                })
                 .LogToTrace()
                 .UseReactiveUI();
     }
